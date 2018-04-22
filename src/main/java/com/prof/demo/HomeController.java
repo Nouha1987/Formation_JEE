@@ -50,6 +50,11 @@ public class HomeController {
          return "../static/Source";  
     }  
     
+    @RequestMapping("/Lien")  
+    public String Lien() {  
+         return "../static/Lien";  
+    }  
+    
     
       
     @RequestMapping("/salle")  
