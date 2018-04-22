@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:include="../templates/header :: header">
+        <!--https://sweetalert2.github.io/-->
+       
+        <style>
+            
+            #myInput {
+  background-image: url('/css/search.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+        </style>
+        
+    </head>
+    <body>
+        <div class="container" >
+            <th:block th:include="../templates/header :: menu"></th:block> 
+        </div>
+  
+        
+<div class="table-responsive">
+    <table class="table" >     
+        <thead> <tr><th>DTO vs DAO</th></tr></thead>
+   <tbody>
+        <tr>
+            <td>
+   DAO is a class that usually has the CRUD operations like save, update, delete. Whereas the DTO is just an object that holds data. It is really a glorified JavaBean with instance variables and setter and getters. Usually it is the DTO that is passed to the save method of a DAO.         
+     </td>    </tr>
+        <tr><td>    
+   DTO is an abbreviation for Data Transfer Object, so it is used to transfer the data between classes and modules of your application. DTO should only contain private fields for your data, getters, setters and constructors. It is not recommended to add business logic methods to such classes, but it is OK to add some util methods.
+
+DAO is an abbreviation for Data Access Object, so it should encapsulate the logic for retrieving, saving and updating data in your data storage (a database, a file-system, whatever). Here is an example how the DAO and DTO interfaces would look like:
+</td>    </tr>
+     <tr><td>
+
+interface PersonDTO {
+    String getName();
+    void setName(String name);
+    //.....
+}
+
+interface PersonDAO {
+    PersonDTO findById(long id);
+    void save(PersonDTO person);
+    //.....
+}
+</td>    </tr>
+        <tr><td>
+The MVC is a wider pattern. The DTO/DAO would be your model in the MVC pattern. It tells you how to organize the whole application, not just the part responsible for data retrieval.
+
+As for the second question, if you have a small application it is completely OK, however if you want to follow the MVC pattern it would be better to have a separate controller, which would contain the business logic for your frame in a separate class and dispatch messages to this controller from the event handlers. This would separate your business logic from the view.
+        
+<br>
+Data Access Object (DAO)<br>
+Data Transfer Object (DTO)
+            
+            </td>    </tr></tbody> 
+        </table>   
+</div>
+        <div th:replace="footer :: footer"/>
+    </body>
+</html>

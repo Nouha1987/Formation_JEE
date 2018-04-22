@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:include="../templates/header :: header">
+        <!--https://sweetalert2.github.io/-->
+
+        
+
+
+    </head>
+    <body>
+        <div class="container" >
+            <th:block th:include="../templates/header :: menu"></th:block> 
+        </div>
+
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table" >     
+                    <thead> 
+                        <tr>
+                            <th>Table Bootstrap responsive</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                         <td class="td_source">
+                     Code Source        
+                         </td> 
+                     </tr>
+                        <tr>
+                            <td>
+        <xmp>     
+            <div class="table-responsive">
+                <table class="table" >     
+                    <thead> 
+                        <tr>
+                            <th>Table Bootstrap responsive</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+
+                            </td>    
+                        </tr>
+                    </tbody> 
+                </table>   
+            </div>
+        </xmp>
+                    </td>    
+                    </tr>
+                    </tbody> 
+                </table>   
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>Afficher source HTML dans une page web</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                     Code Source        
+                         </td> 
+                     </tr>
+                        <tr>
+                            <td>
+                    <xmp>    <xmp> </xmp>
+
+                        </td>    
+                        </tr>
+                        </tbody> 
+                </table>   
+            </div>
+        </div>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table" >     
+                    <thead> 
+                        <tr>
+                            <th>Drop down Bootstrap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                         <td class="td_source">
+                     Code Source        
+                         </td> 
+                     </tr>
+                        <tr>
+                            <td>
+                    <xmp>      
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="@{/}">Question & Réponse
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="page1">Page 1</a></li>
+                                <li><a href="page2">Page 2</a></li>
+                                <li><a href="page3">Page 3</a></li>
+                            </ul>
+                        </li> 
+                    </xmp>
+
+                    </td>  
+
+                    <tr>  
+                        
+                        
+                        <td class="td_source"> Remarque</td>
+                    </tr>
+                    <tr>  
+                        <td>  
+                        
+                        Il faut faire l'appel à "bootstrap-dropdown.js" <br>
+                        Le chemin dans <b><xmp> <a class="dropdown-toggle" data-toggle="dropdown" href="@{/}"> </xmp> </b>  doit être le lien principale
+                        puis dans les filles toogle il contient la suite du lien <br>
+                     Exemple : le lien est <b>/test/page1 </b> dans le  lien principale on met <b>/test</b> <br>
+                            et dans les fille on met <b>page1</b>
+                </td> </tr>
+                    </tbody> 
+                </table>   
+            </div>
+        </div>
+
+    <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>Spring Security</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                         <td class="td_source">
+                             Fichier de configuration
+                         </td> 
+                     </tr>
+                         <tr>
+                             <td>La configuration de la securite dans le fichier
+                    <xmp>SecurityConfig</xmp>
+                             </td>
+                         </tr>
+                      
+                     <tr>
+                         <td class="td_source">
+                             Fonction <b>configure</b>
+                             
+                        
+                         </td> 
+                     </tr>
+                     
+                       <tr>
+                           <td> Cette fonction permet de définir les utilisateurs   <br>
+                                 
+                    <xmp>http.csrf().disable()
+			.authorizeRequests()
+				.antMatchers("/css/**").permitAll()
+                                .antMatchers("/salle/**").hasAnyRole("ADMIN")
+				.anyRequest().authenticated()
+				.and()
+			.formLogin()
+				.loginPage("/login") // 
+				.permitAll()
+				.and()
+			.logout()
+				.permitAll()
+                        .and()
+                .exceptionHandling().accessDeniedHandler(accessDeniedHandler);</xmp>
+                       <br>
+                       Permission à tous les utilisateurs accès au page 
+                       <xmp>.authorizeRequests().antMatchers("/css/**")..permitAll()</xmp> 
+                       <br>
+                        Permission à "Admin" pour l'accès au page 
+                       <xmp>.antMatchers("/salle/**").hasAnyRole("ADMIN")</xmp> 
+                         <br>
+                         Définir la page d'authentification
+                       <xmp>.formLogin().loginPage("/login")</xmp> 
+                       
+                             </td>
+                         </tr>
+                     <tr>
+                         <td class="td_source">
+                             Fonction <b>configureGlobal</b>
+                             
+                        
+                         </td> 
+                     </tr>
+                        <tr>
+                            <td>
+                                Cette fonction permet de définir les utilisateurs   <br>  
+                    <xmp>    auth
+                .inMemoryAuthentication()
+                .withUser(User
+                        .withDefaultPasswordEncoder()
+                        .username("admin")
+                        .password("123")
+                        .roles("ADMIN").build()); </xmp>
+
+                        </td>    
+                        </tr>
+                        
+                        <tr>
+                         <td class="td_source">
+                             Remarque
+                             
+                        
+                         </td> 
+                     </tr>
+                        <tr>
+                            <td>
+                                Il faut gérer la sécurité des fichies Styles tel que Css  <br>  
+                    <xmp>.authorizeRequests().antMatchers("/css/**")..permitAll()     </xmp>
+
+                        </td>    
+                        </tr>
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>
+
+
+ <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>GitHub</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                     Commande    
+                         </td> 
+                     </tr>
+                        <tr>
+                     <td>  Version
+                    <xmp>   git --version </xmp>
+
+                     </td>  
+                      <td>  Etat des fichiers
+                    <xmp>   git status </xmp>
+
+                     </td> 
+                     
+                     <td>  Initialisation du fichier ".git" comme le fichier ".svn"
+                    <xmp>   git init</xmp>
+
+                     </td>  
+                      <td>  Ajout tous les fichiers
+                    <xmp>   git add ./ </xmp>
+
+                     </td>
+                        </tr>
+                        
+                        
+                        
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>
+
+        <div th:replace="footer :: footer"/>
+<style>
+
+            #myInput {
+                background-image: url('/css/search.png');
+                background-position: 10px 10px;
+                background-repeat: no-repeat;
+                width: 100%;
+                font-size: 16px;
+                padding: 12px 20px 12px 40px;
+                border: 1px solid #ddd;
+                margin-bottom: 12px;
+            }
+
+
+            tbody {
+                background-color: #E8E8E8;
+            }
+            
+            xmp {
+                color:  #0000A0	;
+                font-size: 13px;
+                width: 52px;
+            }
+            
+            thead {
+                font-size: 24px;
+            }
+            
+            .td_source{
+                 background-color: #6D6968;
+                 color:  #FFFFFF;
+                 font-size: 16px;
+
+            }
+            
+            
+            
+            
+        </style>
+    </body>
+</html>
