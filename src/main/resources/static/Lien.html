@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:include="../templates/header :: header">
+        <!--https://sweetalert2.github.io/-->
+       
+        <style>
+            
+            #myInput {
+  background-image: url('/css/search.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+        </style>
+        
+    </head>
+    <body>
+        <div class="container" >
+            <th:block th:include="../templates/header :: menu"></th:block> 
+        </div>
+  
+        
+<div class="table-responsive">
+    <table class="table" >     
+        <thead> <tr><th>Lien utile</th></tr></thead>
+   <tbody>
+       <tr><td>
+               <ul>
+                   <li>
+                     mohamed youssfi :  https://www.youtube.com/results?search_query=mohamed+youssfi 
+                   </li> 
+                    <li>
+                       Formation JEE : https://www.youtube.com/watch?v=BMPFvmqCpZE&list=PL41m5U3u3wwkSMDH6e_6lmDVQTpcRLFkO
+                   </li> 
+                    <li>
+                      Docker : https://www.youtube.com/watch?v=caXHwYC3tq8
+                   </li> 
+                    <li>
+                      Devops : https://www.youtube.com/watch?v=M6F6GWcGxLQ
+                   </li> 
+                    <li>
+                      Formation ASP .Net Core https://www.youtube.com/watch?v=_nAwcw3qR4E
+                   </li> 
+                    <li>
+                       
+                   </li> 
+                   
+                   
+               </ul>
+               
+            </td>    </tr></tbody> 
+        </table>   
+    
+    <table class="table" >     
+        <thead> <tr><th>A lire</th></tr></thead>
+   <tbody>
+       <tr><td>
+           
+               <ul>               
+                   <li>
+                       Query dsl
+                   </li> 
+                   <li>
+                       web service REST
+                   </li> 
+                   <li>
+                       
+                   </li> 
+                   <li>
+                       
+                   </li> 
+                   <li>
+                       
+                   </li> 
+                   
+                   
+               </ul>
+                
+               
+               
+           </td>
+            </tr></tbody> 
+        </table>   
+    
+</div>
+        <div th:replace="footer :: footer"/>
+    </body>
+</html>
