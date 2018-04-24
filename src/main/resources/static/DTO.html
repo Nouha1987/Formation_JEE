@@ -28,7 +28,7 @@ and open the template in the editor.
             <th:block th:include="../templates/header :: menu"></th:block> 
         </div>
   
-        
+  <div class="container">          
 <div class="table-responsive">
     <table class="table" >     
         <thead> <tr><th>DTO vs DAO</th></tr></thead>
@@ -42,7 +42,7 @@ and open the template in the editor.
 
 DAO is an abbreviation for Data Access Object, so it should encapsulate the logic for retrieving, saving and updating data in your data storage (a database, a file-system, whatever). Here is an example how the DAO and DTO interfaces would look like:
 </td>    </tr>
-     <tr><td>
+        <tr><td> <xmp>
 
 interface PersonDTO {
     String getName();
@@ -54,7 +54,7 @@ interface PersonDAO {
     PersonDTO findById(long id);
     void save(PersonDTO person);
     //.....
-}
+} </xmp>
 </td>    </tr>
         <tr><td>
 The MVC is a wider pattern. The DTO/DAO would be your model in the MVC pattern. It tells you how to organize the whole application, not just the part responsible for data retrieval.
@@ -68,7 +68,7 @@ Data Transfer Object (DTO)
             </td>    </tr></tbody> 
         </table>   
 </div>
-         
+  </div>        
         <div th:replace="footer :: footer"/>
       
     </body>

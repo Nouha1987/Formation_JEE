@@ -8,43 +8,16 @@ and open the template in the editor.
     <head th:include="../templates/header :: header">
         <!--https://sweetalert2.github.io/-->
 
-       
+        
 
 
     </head>
     <body>
-      <div class="container">
-            
-             <div th:replace="../templates/header :: menu"/>
-        </div> 
-        
-    
-   <div class="row">
-    <nav class="col-sm-3" id="myScrollspy">
-      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="300">
-        <li class="active"><a href="#responsive" >Table Boostrap responsive</a></li>
-        <li><a href="#source_html">Afficher source HTML dans une page web</a></li>
-        <li><a href="#drop">Drop down Bootstrap</a></li>
-         <li><a href="#Security">Spring Security</a></li>
-        
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#section41">Section 4-1</a></li>
-            <li><a href="#section42">Section 4-2</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-
-        
-       <div class="col-sm-9">
-           
-           
-           <div id="responsive">
         <div class="container" >
-            <br>
-            <br><br>
+            <th:block th:include="../templates/header :: menu"></th:block> 
+        </div>
+
+        <div class="container">
             <div class="table-responsive">
                 <table class="table" >     
                     <thead> 
@@ -84,11 +57,8 @@ and open the template in the editor.
                 </table>   
             </div>
         </div>
-           </div>
-<div id="source_html">
-     <br>
-            <br><br>
-        <div class="container" >
+
+        <div class="container">
             <div class="table-responsive-sm">
                 <table class="table"  >     
                     <thead> 
@@ -112,10 +82,7 @@ and open the template in the editor.
                 </table>   
             </div>
         </div>
-      </div>
-        <div class="container" id="drop">
-             <br>
-            <br><br>
+        <div class="container">
             <div class="table-responsive">
                 <table class="table" >     
                     <thead> 
@@ -164,9 +131,7 @@ and open the template in the editor.
             </div>
         </div>
 
-    <div class="container" id="Security">
-         <br>
-            <br><br>
+    <div class="container">
             <div class="table-responsive-sm">
                 <table class="table"  >     
                     <thead> 
@@ -363,11 +328,7 @@ and open the template in the editor.
                 </table>   
             </div>
         </div>
-       </div>
-         </div>
-        
-        
-        
+
         <div th:replace="footer :: footer"/>
 <style>
 
@@ -386,69 +347,27 @@ and open the template in the editor.
             tbody {
                 background-color: #E8E8E8;
             }
-           /* body {
-  position: relative;*/ /* For scrollyspy */
- /* padding-top: 50px; *//* Account for fixed navbar *//*
-}       
-*/
-/*  .affix {
-      top: 50px;
-      z-index: 9999 !important;
-  }*/
-               /* #navmenu-side.affix {
-      position: fixed;
-      top: 300px;
-      width: 100%;
-   
-    }/*
-#navmenu-side.affix-bottom {
-  position: absolute;
-  width: 100%;
-}*/
+            
+            xmp {
+                color:  #0000A0	;
+                font-size: 13px;
+                width: 52px;
+            }
+            
+            thead {
+                font-size: 24px;
+            }
+            
+            .td_source{
+                 background-color: #6D6968;
+                 color:  #FFFFFF;
+                 font-size: 16px;
 
- /*.menu_affix{
-    position: fixed;
-      top: 200px;
-      width: 100%;
-      z-index: 100;
-  
-   
-  
-}*/
- 
- /*.col-sm-9:hover{
-     position: absolute;
-  top: 200px;
- left:30%;
-    transform: translate(0px, 200px);
- }*/
- ul.nav-pills {
-      top: 150px;
-      position: fixed;
-  }
-  
- /*  @media screen  {
-    #section1, #section2, #section3, #section41, #section42  {
-        margin-top: 150px;
-        height:200px;
-    }*/
-
- /* #responsive, #source_html, #drop, #Security {
-        margin:50px auto 50px auto;
-       position: relative;
-    }*/
-  
-  
+            }
+            
+            
+            
+            
         </style>
-        <script>
-           /* $('#myScrollspy').affix({
-      offset: {
-        top: $(window).top() * .1075
-      }
-}); */
-    
-    
-    
-            </script>
     </body>
 </html>
