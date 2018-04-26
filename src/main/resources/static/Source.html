@@ -363,10 +363,358 @@ and open the template in the editor.
                 </table>   
             </div>
         </div>
-       </div>
+           
+    <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>LinkedList vs. ArrayList</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                     Commande    
+                         </td> 
+                     </tr>
+                        <tr>
+                     <td>  
+
+The most notable difference between the LinkedList and the ArrayList is in the way they store objects.
+The ArrayList is better for storing and accessing data, as it is very similar to a normal array.
+The LinkedList is better for manipulating data, such as making numerous inserts and deletes.
+
+In addition to storing the object, the LinkedList stores the memory address (or link) of the element that follows it. It's called a LinkedList because each element contains a link to the neighboring element.
+     
+                     </td>  
+                     
+                         </tr>
+
+                        
+                        
+                        
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>     
+           
+           
+             <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>HashMap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                     HashMap    
+                         </td> 
+                     </tr>
+                        <tr>
+                     <td>  
+
+
+
+Arrays and Lists store elements as ordered collections, with each element given an integer index.
+HashMap is used for storing data collections as key and value pairs. One object is used as a key (index) to another object (the value). 
+The put, remove, and get methods are used to add, delete, and access values in the HashMap.
+Example:
+import java.util.HashMap;
+                    <xmp>
+public class MyClass {
+  public static void main(String[ ] args) {
+    HashMap<String, Integer> points = new HashMap<String, Integer>();
+    points.put("Amy", 154);
+    points.put("Dave", 42);
+    points.put("Rob", 733);
+    System.out.println(points.get("Dave")); 
+  }
+}    
+</xmp>
+                     </td>  
+                     
+                         </tr>
+
+                        
+                        
+                        
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>   
+       <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>Iterators</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                     Iterators    
+                         </td> 
+                     </tr>
+                        <tr>
+                     <td>  
+
+
+An Iterator is an object that enables to cycle through a collection, obtain or remove elements. 
+Before you can access a collection through an iterator, you must obtain one. Each of the collection classes provides an iterator() method that returns an iterator to the start of the collection. By using this iterator object, you can access each element in the collection, one element at a time.
+
+The Iterator class provides the following methods:
+hasNext(): Returns true if there is at least one more element; otherwise, it returns false.
+next(): Returns the next object and advances the iterator.
+remove(): Removes the last object that was returned by next from the collection.
+                    <xmp>
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class MyClass {
+   public static void main(String[ ] args) {
+  LinkedList<String> animals = new LinkedList<String>();
+  animals.add("fox");
+  animals.add("cat");
+  animals.add("dog");
+  animals.add("rabbit");
+
+  Iterator<String> it = animals.iterator();
+  String value = it.next();
+  System.out.println(value);
+}
+}
+//Outputs "fox"   
+</xmp>
+                     </td>  
+                     
+                         </tr>
+
+                        
+                        
+                        
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>      
+           
+       
+                 <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th> Types of Web Storage Objects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                      Types of Web Storage Objects    
+                         </td> 
+                     </tr>
+                        <tr>
+                     <td>  
+
+  Types of Web Storage Objects
+
+There are two types of web storage objects:
+- sessionStorage()
+- localStorage()
+
+Local vs. Session
+- Session Storage is destroyed once the user closes the browser
+- Local Storage stores data with no expiration date
+
+                     </td>  
+                     <td>
+                         The syntax for web storage for both local and session storage is very simple and similar.
+The data is stored as key/value pairs.
+
+Storing a Value:
+localStorage.setItem("key1", "value1");
+
+Getting a Value:
+//this will print the value
+alert(localStorage.getItem("key1")); 
+
+Removing a Value:
+localStorage.removeItem("key1");
+
+Removing All Values:
+localStorage.clear();
+
+                     </td>
+                     
+                     
+                     
+                         </tr>
+
+                        
+                        
+                        
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>  
+           
+           
+              <div class="container">
+            <div class="table-responsive-sm">
+                <table class="table"  >     
+                    <thead> 
+                        <tr>
+                            <th>placeholder</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                     <tr>
+                         <td class="td_source">
+                      placeholder  
+                         </td> 
+                     </tr>
+                        <tr>
+                     <td>  
+
+  
+           HTML5 has introduced a new attribute called placeholder. On <xmp><input></xmp> and <xmp><textarea></xmp> 
+elements, this attribute provides a hint to the user of what information can be entered into the field.
+<xmp><form>
+   <label for="email">Your e-mail address: </label> 
+   <input type="text" name="email" placeholder="email@example.com" /> 
+</form></xmp>
+                     </td>
+                      </tr>
+                     <tr>
+                         <td class="td_source">
+                      autofocus  
+                         </td> 
+                     </tr> 
+                     
+                        <tr>
+                         <td>
+                     The autofocus attribute makes the desired input focus when the form loads 
+                         </td> 
+                     </tr>
+
+    </tr>
+                     <tr>
+                         <td class="td_source">
+                      autocomplete  
+                         </td> 
+                     </tr> 
+                     
+                        <tr>
+                         <td>
+                       The autocomplete attribute specifies whether a form or input field should have autocomplete turned on or off.
+When autocomplete is on, the browser automatically complete values based on values that the user has entered before.
+
+                        
+                         </td> 
+                     </tr>
+                     
+<tr>
+                         <td class="td_source">
+                     HTML5 added several new input types:
+                         </td> 
+                     </tr> 
+<tr>
+                         <td>
+                    - color
+- date
+- datetime
+- datetime-local
+- email
+- month
+- number
+- range
+- search
+- tel
+- time
+- url
+- week  
+                         </td> 
+                     </tr> 
+<tr>
+                         <td class="td_source">
+                     
+HTML5 added several new input types:
+                         </td> 
+                     </tr> 
+<tr>
+                         <td>
+                     
+- autofocus
+- form
+- formaction
+- formenctype
+- formmethod
+- formnovalidate
+- formtarget
+- height and width
+- list
+- min and max
+- multiple
+- pattern (regexp)
+- placeholder
+- required
+- step
+                         </td> 
+                     </tr> 
+
+<tr>
+                         <td class="td_source">
+                     
+
+Creating a Search Box
+                         </td> 
+                     </tr> 
+<tr>
+                         <td>
+                     
+The new search input type can be used to create a search box:
+<xmp><input id="mysearch" name="searchitem" type="search" /></xmp>
+
+Search Options
+
+The <xmp><datalist></xmp> tag can be used to define a list of pre-defined options for the search field:
+<xmp><input id="car" type="text" list="colors" />
+<datalist id="colors">
+   <option value="Red">
+   <option value="Green">
+   <option value="Yellow">
+</datalist></xmp>
+                         </td> 
+                     </tr> 
+
+
+
+
+                        
+                        
+                        </tbody> 
+                </table>   
+            </div>
+        </div>  
+           
+           
+           
+           
+           
+           
+           
+  </div>
          </div>
         
-        
+      
         
         <div th:replace="footer :: footer"/>
 <style>

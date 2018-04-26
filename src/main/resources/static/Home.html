@@ -18,8 +18,13 @@ and open the template in the editor.
   <div class="container">
         <th:block th:include="../templates/header :: menu"></th:block> 
     </div>
+   
+   
+    
    <br><br><br><br>
     <h1>Formation JEE</h1>    
+    
+    <p th:text="' le ' + ${serverTime} + '!'" />
     <div th:replace="footer :: footer"/>
     </body>
 </html>
