@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:include="../templates/header :: header-css">
+
+
+    </head>
+    <body>
+        <!-- <div class="container">
+             <th:block th:include="../templates/header :: menu"></th:block> 
+         </div>-->
+
+
+        <div class="container">
+            <th:block th:include="../templates/header :: menu"></th:block> 
+        </div>
+
+
+
+        <br><br><br><br>
+        <div class="container">
+            <h1>Ajout client</h1>  
+
+            <div class="form-row">
+
+                <div class="contact-section">
+                    <div class="container">
+                        <!--<form modelAttribute="client" action="/new" method="Post">-->
+
+                        <form action="#" th:action="@{/client/ajout}" th:object="${client}" method="post">
+                            <div class="col-md-6 form-line">
+                                <div class="panel panel-default">
+                                    <div class="panel-body"  style="align-items: flex-end ">
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername">Nom</label>
+                                            <input th:field="*{nom}" type="text" class="form-control" id="" placeholder=" Enter Name"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername">Prenom</label>
+                                            <input th:field="*{prenom}" type="text" class="form-control" id="" placeholder=" Enter Prenom"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputUsername">Adresse</label>
+                                            <input th:field="*{adresse}" type="text" class="form-control" id="" placeholder=" Enter Adresse"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail">Email</label>
+                                            <input th:field="*{mail}" type="email" class="form-control" id="exampleInputEmail" placeholder=" Enter Email"/>
+                                        </div>	
+                                        <div class="form-group">
+
+                                            <label>Choisir Image</label>
+
+                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                            <input th:field="*{idClient}" type="hidden">
+
+
+                                        </div>	
+                                    </div>
+                                    <div class="panel-footer"  style="align-items: flex-start ">
+                                        <div class="form-group">
+
+
+
+
+                                            <input  type="submit" class="btn btn-success" value="Enregister" />
+
+                                            <!-- <a th:href="@{'/category/edit/' + ${category.idCategory}}">view</a>-->
+                                            <a th:href="@{'/client/'}" class="btn btn-danger">Annuler</a>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="footer :: footer"/>
+    </body>
+</html>

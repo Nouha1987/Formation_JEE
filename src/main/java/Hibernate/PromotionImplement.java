@@ -68,6 +68,17 @@ public class PromotionImplement implements PromotionInterface {
 
     }
 
+    
+    public Client getById(int id) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+   
+            Client us = (Client) session.get(Client.class, id);
+            
+            return us;
+      
+	}
+
+    
     @Override
     public void updatePromotion(Client u) {
         Session session = HibernateUtil.getSessionFactory().openSession();

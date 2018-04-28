@@ -32,6 +32,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
   
 @Controller  
@@ -95,14 +96,61 @@ public class HomeController {
         
         
         
-         @RequestMapping(value = "/new" , method = RequestMethod.GET)
+         @RequestMapping(value = "/client/new" , method = RequestMethod.GET)
 	public String new_client(Model model) {
+            Client client=new Client();
+            // client.setNom("ff"); c'est^por test ce que le formulaire fonctionne
+            model.addAttribute("client", client);
+            return  "../static/AjoutClient";
+        
+        }
+        PromotionImplement cli=new PromotionImplement();
+          @RequestMapping(value = "/client/ajout" , method = RequestMethod.POST)
+	public String ajout(Model model,Client client) {
+            if (client!=null) 
+            {
+                if (client.getIdClient() == 0)
+                {
+                     cli.addPromotion(client);
+                }
+                else
+                     
+                {
+                     cli.updatePromotion(client);
+                }
+           
+            }
+            
+            return  "redirect:/client/";
+        
+        }
+        
+         @RequestMapping(value = "/client/update/{id}" , method = RequestMethod.GET)
+	public String update_client(Model model, @PathVariable("id") int idClient) {
+            
+            Client client = cli.getById(idClient);
+            if (client != null)
+            {
+                model.addAttribute("client", client);
+            }
+            
+            
             return  "../static/AjoutClient";
         
         }
         
-          @RequestMapping(value = "/ajout" , method = RequestMethod.POST)
-	public String ajout(Model model) {
+        
+          @RequestMapping(value = "/client/delete/{id}")
+	public String supp(Model model,@PathVariable("id") int idClient) {
+            Client client=new Client();
+            client = cli.getById(idClient);
+            if (client != null)
+            {
+               cli.deletePromotion(idClient);
+                
+           
+            }
+            
             return  "redirect:/client/";
         
         }
